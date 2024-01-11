@@ -15,3 +15,11 @@ init-db: create-db
 migrate-up:
 	migrate -source "file://migrations" -database "mysql://$(USER):$(PASSWORD)@tcp($(HOST):$(PORT))/$(DATABASE)" up
 .PHONY: migrate-up
+
+init: create-db wait init-db migrate-up
+	migrate -source "file://migrations" -database "mysql://$(USER):$(PASSWORD)@tcp($(HOST):$(PORT))/$(DATABASE)" up
+.PHONY: init
+
+wait:
+	sleep 10
+.PHONY: wait

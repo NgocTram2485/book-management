@@ -1,3 +1,4 @@
+```mysql
 start transaction;
 
 create table categories
@@ -78,3 +79,4 @@ INSERT INTO book_management.books (id, name, author, category_id, publisher_id, 
 INSERT INTO book_management.books (id, name, author, category_id, publisher_id, status, avatar, price, qty, created_at, updated_at) VALUES (4, 'Truyện cổ tích', 'Nhà xuất bản trẻ', 2, 2, 'active', '', 99000, 100, '2024-01-08 07:06:23', '2024-01-08 07:06:40');
 
 commit;
+```
